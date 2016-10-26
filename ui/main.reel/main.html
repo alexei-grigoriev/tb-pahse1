@@ -10,7 +10,10 @@
     {
         "owner": {
             "properties": {
-                "element": {"#": "main"}
+                "element": {"#": "main"},
+                "contenteditable": "true",
+                "dir": "ltr",
+                "draggable": "true"
             }
         },
         "actionEventListener": {
@@ -23,20 +26,28 @@
                 "isHidden": true
             }
         },
+        "actionEventListener2": {
+            "prototype": "montage/core/event/action-event-listener",
+            "properties": {
+                "action": "addContent",
+                "handler": {"@": "rangeController"}
+            },
+            "_dev": {
+                "isHidden": true
+            }
+        },
         "button": {
             "prototype": "digit/ui/button.reel",
             "properties": {
-                "contenteditable": "true",
-                "dir": "ltr",
-                "draggable": "true",
+                "element": {"#": "button"},
                 "enabled": true,
-                "label": "newTask"
+                "label": "Button"
             },
             "listeners": [
                 {
                     "type": "action",
                     "useCapture": true,
-                    "listener": {"@": "actionEventListener"}
+                    "listener": {"@": "actionEventListener2"}
                 }
             ]
         },
@@ -80,6 +91,7 @@
 
             </li>
         </ul>
+        <p data-montage-id="text"></p>
     </div>
 </body>
 </html>
