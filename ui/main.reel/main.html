@@ -78,6 +78,18 @@
                 "draggable": "true",
                 "value": "Things to do"
             }
+        },
+        "tsak1": {
+            "prototype": "ui/tsak.reel",
+            "properties": {
+                "element": {"#": "tsak1"},
+                "contenteditable": "true",
+                "dir": "ltr",
+                "draggable": "true"
+            },
+            "bindings": {
+                "tsak": {"<-": "@list:iteration.object"}
+            }
         }
     }
     </script>
@@ -87,7 +99,7 @@
         <h1 data-montage-id="title"></h1>
         <button data-montage-id="button"></button>
         <ul data-montage-id="list">
-            <li>
+            <li data-montage-id="tsak1">
 
             </li>
         </ul>
